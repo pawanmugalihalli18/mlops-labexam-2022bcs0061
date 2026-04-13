@@ -3,16 +3,16 @@ pipeline {
 
     stages {
 
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                python3.11 -m venv venv
-                . venv/bin/activate
-                pip install --upgrade pip
-                pip install pandas scikit-learn joblib
-                '''
-            }
-        }
+stage('Install Dependencies') {
+    steps {
+        sh '''
+        python3 -m venv venv
+        . venv/bin/activate
+        pip install --upgrade pip
+        pip install pandas scikit-learn joblib --only-binary=:all:
+        '''
+    }
+}
 
         stage('Train Model') {
             steps {
