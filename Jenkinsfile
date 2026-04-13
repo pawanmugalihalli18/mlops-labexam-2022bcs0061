@@ -8,7 +8,7 @@ pipeline {
                 sh '''
                 python3 -m venv venv
                 . venv/bin/activate
-                pip install pandas scikit-learn joblib
+                pip install -v pandas scikit-learn joblib
                 '''
             }
         }
